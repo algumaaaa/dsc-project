@@ -56,7 +56,7 @@ void AMain::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AMain::MoveUp(float Value)
 {
-	if (Controller == nullptr || Value == 0.f) { return; }
+	if (Controller == nullptr || Value == 0.f || bIsPlayingAnim) { return; }
 
 	const FRotator Rotation = Controller->GetControlRotation();
 	const FRotator YawRotation(0.f, Rotation.Yaw, 0.f);
@@ -67,7 +67,7 @@ void AMain::MoveUp(float Value)
 
 void AMain::MoveRight(float Value)
 {
-	if (Controller == nullptr || Value == 0.f) { return; }
+	if (Controller == nullptr || Value == 0.f || bIsPlayingAnim) { return; }
 
 	const FRotator Rotation = Controller->GetControlRotation();
 	const FRotator YawRotation(0.f, Rotation.Yaw, 0.f);

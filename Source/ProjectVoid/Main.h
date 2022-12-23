@@ -21,6 +21,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera", meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* Camera;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Animation")
+	bool bIsPlayingAnim;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
